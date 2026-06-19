@@ -3,4 +3,41 @@ name = "micromouse"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "micromouse"
+path = "src/lib.rs"
+
+[[bin]]
+name = "micromouse"
+path = "src/main.rs"
+
+[[bin]]
+name = "wokwi_hw267"
+path = "src/bin/wokwi_hw267.rs"
+required-features = ["stm32"]
+
 [dependencies]
+embedded-hal = { version = "1.0.0", default-features = false, optional = true }
+
+[target.'cfg(target_arch = "arm")'.dependencies]
+cortex-m = { version = "0.7.7", optional = true }
+cortex-m-rt = { version = "0.7.5", optional = true }
+panic-halt = { version = "1.0.0", optional = true }
+nb = { version = "1.1.0", optional = true }
+stm32f1xx-hal = { version = "0.11.0", features = ["stm32f103", "medium"], optional = true }
+
+[features]
+default = []
+stm32 = [
+    "dep:embedded-hal",
+    "dep:cortex-m",
+    "dep:cortex-m-rt",
+    "dep:panic-halt",
+    "dep:nb",
+    "dep:stm32f1xx-hal",
+]
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+opt-level = "s"

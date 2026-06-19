@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "micromouse",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-stm32-bluepill",
+      "id": "stm32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic",
+      "top": 0,
+      "left": 360,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["stm32:PA8", "logic:D0", "green", []],
+    ["stm32:PB0", "logic:D1", "blue", []],
+    ["stm32:PB1", "logic:D2", "orange", []],
+    ["stm32:GND.1", "logic:GND", "black", []]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "target/thumbv7m-none-eabi/debug/wokwi_hw267"
+elf = "target/thumbv7m-none-eabi/debug/wokwi_hw267"
