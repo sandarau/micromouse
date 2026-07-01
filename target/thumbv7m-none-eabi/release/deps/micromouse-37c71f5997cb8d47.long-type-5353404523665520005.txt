@@ -1,0 +1,1 @@
+PwmChannel<stm32f1::generic::Periph<stm32f1xx_hal::pac::tim2::RegisterBlock, 1073743872>, 0>

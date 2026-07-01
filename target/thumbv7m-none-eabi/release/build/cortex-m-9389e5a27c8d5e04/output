@@ -1,0 +1,4 @@
+cargo:rustc-link-lib=static=cortex-m
+cargo:rustc-link-search=/home/alexandra/micromouse/target/thumbv7m-none-eabi/release/build/cortex-m-9389e5a27c8d5e04/out
+cargo:rustc-cfg=cortex_m
+cargo:rustc-cfg=armv7m
